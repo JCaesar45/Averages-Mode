@@ -1,0 +1,56 @@
+// Define the mode function
+function mode(arr) {
+  if (arr.length === 0) {
+    return [];
+  }
+
+  const frequency = {};
+  let maxFreq = 0;
+
+  for (let num of arr) {
+    frequency[num] = (frequency[num] || 0) + 1;
+    if (frequency[num] > maxFreq) {
+      maxFreq = frequency[num];
+    }
+  }
+
+  const modes = [];
+  for (let num in frequency) {
+    if (frequency[num] === maxFreq) {
+      modes.push(Number(num));
+    }
+  }
+
+  return modes;
+}
+
+// Handle form submission
+document.getElementById('billiardsForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const inputStr = document.getElementById('numberInput').value.trim();
+  const resultDiv = document.getElementById('result');
+
+  if (inputStr === "") {
+    resultDiv.innerHTML = "<em>Please enter some numbers.</em>";
+    return;
+  }
+
+  const inputArr = inputStr.split(',').map(item => {
+    const num = Number(item.trim());
+    return isNaN(num) ? null : num;
+  }).filter(num => num !== null);
+
+  if (inputArr.length === 0) {
+    resultDiv.innerHTML = "<em>Invalid input. Please enter valid numbers separated by commas.</em>";
+    return;
+  }
+
+  const modesArray = mode(inputArr);
+
+  if (modesArray.length === 1) {
+    resultDiv.innerHTML = `<strong>Mode:</strong> ${modesArray[0]}`;
+  } else {
+    resultDiv.innerHTML = `<strong>Modes:</strong> ${modesArray.join(', ')}`;
+  }
+});
