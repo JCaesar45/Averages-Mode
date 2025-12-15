@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles with a billiards-themed background */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header styles */
+header {
+  background-color: #0d1b2a;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2em;
+  color: #ffd700; /* Gold color to mimic billiard balls */
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Content styles */
+.content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+#billiardsForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#billiardsForm input {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+#billiardsForm input:focus {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+#billiardsForm button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffd700; /* Gold for the button */
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#billiardsForm button:hover {
+  background-color: #e6c200;
+}
+
+/* Result styles */
+#result {
+  font-size: 1.4em;
+  margin-top: 20px;
+  min-height: 50px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Footer styles */
+footer {
+  background-color: #0d1b2a;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9em;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+}
