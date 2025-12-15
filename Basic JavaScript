@@ -1,0 +1,26 @@
+function mode(arr) {
+  if (arr.length === 0) {
+    return []; // or handle as needed
+  }
+
+  const frequency = {};
+  let maxFreq = 0;
+
+  // Count the frequency of each element
+  for (let num of arr) {
+    frequency[num] = (frequency[num] || 0) + 1;
+    if (frequency[num] > maxFreq) {
+      maxFreq = frequency[num];
+    }
+  }
+
+  // Collect all elements that have the max frequency
+  const modes = [];
+  for (let num in frequency) {
+    if (frequency[num] === maxFreq) {
+      modes.push(Number(num));
+    }
+  }
+
+  return modes;
+}
